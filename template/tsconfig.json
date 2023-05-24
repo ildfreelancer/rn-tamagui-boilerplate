@@ -1,0 +1,29 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@libs/*": ["libs/*"],
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@constants/*": ["src/constants/*"],
+      "@i18n/*": ["src/i18n/*"],
+      "@navigation/*": ["src/navigation/*"],
+      "@screens/*": ["src/screens/*"],
+      "@services/*": ["src/services/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@state/*": ["src/state/*"],
+      "@contexts/*": ["src/contexts/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@hocs/*": ["src/hocs/*"],
+      "@config/*": ["src/config/*"],
+      "@providers/*": ["src/providers/*"],
+      "@fixtures/*": ["src/fixtures/*"],
+      "@typings/*": ["src/typings/*"],
+      "@seeds/*": ["src/seeds/*"]
+    },
+    "typeRoots": ["node_modules/@types", "@typings"]
+  }
+}

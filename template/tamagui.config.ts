@@ -1,0 +1,270 @@
+import {ms, s, vs} from '@gocodingnow/rn-size-matters';
+import {
+  setSizeMattersBaseHeight,
+  setSizeMattersBaseWidth,
+} from '@gocodingnow/rn-size-matters';
+import {
+  createFont,
+  createTamagui,
+  createTokens,
+  setupReactNative,
+} from '@tamagui/core';
+import {shorthands} from '@tamagui/shorthands';
+import {themes, tokens as defaultTokens} from '@tamagui/themes';
+import merge from 'lodash-es/merge';
+import Config from 'react-native-config';
+
+setSizeMattersBaseWidth(parseInt(Config.SIZE_MATTERS_BASE_WIDTH, 10));
+setSizeMattersBaseHeight(parseInt(Config.SIZE_MATTERS_BASE_HEIGHT, 10));
+
+import {Image, Text, View} from 'react-native';
+
+setupReactNative({Image, Text, View});
+
+const poppinsFont = createFont({
+  family: 'Poppins',
+  size: {
+    4: ms(16, 0.8),
+    true: ms(16, 0.8),
+    ss: ms(10, 0.8),
+    xs: ms(12, 0.8),
+    sm: ms(14, 0.8),
+    base: ms(16, 0.8),
+    md: ms(18, 0.8),
+    lg: ms(20, 0.8),
+    xl: ms(24, 0.8),
+    '2xl': ms(28, 0.8),
+    '3xl': ms(30, 0.8),
+  },
+  lineHeight: {
+    20: ms(20, 0.8),
+    24: ms(24, 0.8),
+    32: ms(32, 0.8),
+    // ...
+  },
+  weight: {
+    400: '400',
+    500: '500',
+    600: '600',
+  },
+  letterSpacing: {
+    4: 0,
+    8: -1,
+  },
+  // (native only) swap out fonts by face/style
+  face: {
+    400: {normal: 'Poppins-Regular'},
+    500: {normal: 'Poppins-Medium'},
+    600: {normal: 'Poppins-SemiBold'},
+  },
+  // you may also set `transform` as textTransform values
+  // and `style` as fontStyle values
+});
+
+const size = {
+  0: 0,
+  1: 5,
+  2: 10,
+  's-0.25': s(1),
+  's-0.5': s(2),
+  's-0.75': s(3),
+  's-1': s(4),
+  's-1.25': s(5),
+  's-1.5': s(6),
+  's-1.75': s(7),
+  's-2': s(8),
+  's-2.25': s(9),
+  's-2.5': s(10),
+  's-3': s(12),
+  's-3.5': s(14),
+  's-3.75': s(15),
+  's-4': s(16),
+  's-4.25': s(17),
+  's-4.5': s(18),
+  's-4.75': s(19),
+  's-5': s(20),
+  's-5.25': s(21),
+  's-5.5': s(22),
+  's-6': s(24),
+  's-6.5': s(28),
+  's-7': s(28),
+  's-7.5': s(30),
+  's-8': s(32),
+  's-8.5': s(34),
+  's-9': s(36),
+  's-9.25': s(37),
+  's-9.5': s(38),
+  's-10': s(40),
+  's-10.5': s(42),
+  's-11': s(44),
+  's-11.25': s(45),
+  's-12': s(48),
+  's-13': s(50),
+  's-13.5': s(52),
+  's-13.75': s(55),
+  's-14': s(56),
+  's-15': s(60),
+  's-16': s(64),
+  's-17': s(68),
+  's-17.5': s(70),
+  's-18': s(72),
+  's-18.75': s(75),
+  's-19': s(76),
+  's-19.5': s(78),
+  's-20': s(80),
+  's-22': s(88),
+  's-23': s(92),
+  's-24': s(96),
+  's-25': s(100),
+  's-27.5': s(112),
+  's-30': s(120),
+  's-35': s(140),
+  's-37.5': s(150),
+  's-82.5': s(330),
+  'vs-0.5': vs(2),
+  'vs-0.75': vs(3),
+  'vs-1': vs(4),
+  'vs-1.25': vs(5),
+  'vs-1.5': vs(6),
+  'vs-2': vs(8),
+  'vs-2.25': s(9),
+  'vs-2.5': vs(10),
+  'vs-3': vs(12),
+  'vs-3.5': vs(14),
+  'vs-3.75': vs(15),
+  'vs-4': vs(16),
+  'vs-4.5': vs(18),
+  'vs-5': vs(20),
+  'vs-5.25': vs(21),
+  'vs-5.5': vs(22),
+  'vs-5.75': vs(23),
+  'vs-6': vs(24),
+  'vs-6.5': vs(26),
+  'vs-7': vs(28),
+  'vs-7.5': vs(30),
+  'vs-8': vs(32),
+  'vs-8.5': vs(34),
+  'vs-9': vs(36),
+  'vs-9.5': vs(38),
+  'vs-10': vs(40),
+  'vs-10.5': vs(42),
+  'vs-11': vs(44),
+  'vs-11.25': vs(45),
+  'vs-11.5': vs(46),
+  'vs-12': vs(48),
+  'vs-13': vs(50),
+  'vs-13.5': vs(52),
+  'vs-14': vs(56),
+  'vs-14.5': vs(58),
+  'vs-15': vs(60),
+  'vs-15.5': vs(62),
+  'vs-15.75': vs(64),
+  'vs-16.25': vs(65),
+  'vs-16.5': vs(66),
+  'vs-17': vs(68),
+  'vs-17.5': vs(68),
+  'vs-18': vs(72),
+  'vs-18.75': vs(75),
+  'vs-19': vs(76),
+  'vs-19.5': vs(78),
+  'vs-20': vs(80),
+  'vs-22': vs(88),
+  'vs-23': vs(92),
+  'vs-23.5': vs(94),
+  'vs-24': vs(96),
+  'vs-25': vs(100),
+  'vs-26': vs(104),
+  'vs-29': vs(116),
+  'vs-30': vs(120),
+  'vs-32': vs(128),
+  'vs-33': vs(132),
+  'vs-33.5': vs(134),
+  'vs-34': vs(136),
+  'vs-35': vs(140),
+  'vs-40': vs(160),
+  'vs-43': vs(172),
+  'vs-50': vs(200),
+  'vs-82.5': vs(330),
+};
+
+export const tokens = createTokens({
+  size,
+  space: {...size, '-1': -5, '-2': -10},
+  radius: {
+    0: 0,
+    's-0.25': s(1),
+    's-0.5': s(2),
+    's-1': s(4),
+    's-1.25': s(5),
+    's-1.5': s(6),
+    's-2': s(8),
+    's-2.5': s(10),
+    's-3': s(12),
+    's-3.5': s(14),
+    's-4': s(16),
+    's-4.5': s(18),
+    's-5': s(20),
+    's-5.5': s(22),
+    's-6': s(24),
+    's-7.5': s(30),
+    's-8': s(32),
+    's-9': s(36),
+    's-10': s(40),
+    's-10.5': s(42),
+    's-12': s(48),
+    's-18': s(72),
+    's-57.5': s(230),
+    's-75': s(300),
+  },
+  zIndex: {0: 0},
+  color: {
+    bg: '#211939',
+    white: '#fff',
+    black: '#000',
+    blackLight: '#112D32',
+    primary: '#BF3160',
+    gray: '#717171',
+    border: '#F2F2F7',
+  },
+});
+
+const config = createTamagui({
+  shouldAddPrefersColorThemes: false,
+  themeClassNameOnRoot: false,
+  defaultTheme: 'light',
+  fonts: {
+    heading: poppinsFont,
+    body: poppinsFont,
+    true: poppinsFont,
+  },
+  tokens: merge(defaultTokens, tokens),
+  themes: merge(themes, {
+    light: {
+      primary: tokens.color.primary,
+      bg: tokens.color.white,
+      white: tokens.color.white,
+      gray: tokens.color.gray,
+      border: tokens.color.border,
+      blackLight: tokens.color.blackLight,
+    },
+    dark: {
+      primary: tokens.color.primary,
+      bg: tokens.color.white,
+      white: tokens.color.white,
+      gray: tokens.color.gray,
+      border: tokens.color.border,
+      blackLight: tokens.color.blackLight,
+    },
+  }),
+  shorthands,
+});
+
+export type AppConfig = typeof config;
+// this will give you types for your components
+// note - if using your own design system, put the package name here instead of tamagui
+declare module '@tamagui/core' {
+  // rome-ignore lint/suspicious/noEmptyInterface: <explanation>
+  interface TamaguiCustomConfig extends AppConfig {}
+}
+
+export default config;
