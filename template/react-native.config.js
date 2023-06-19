@@ -5,6 +5,13 @@ module.exports = {
         ios: null,
       },
     },
+    'react-native-flipper': {
+      platforms: {
+        ios: {
+          configurations: ['Debug'],
+        },
+      },
+    },
   },
   assets: ['./src/assets/fonts'],
 };
